@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const appearOptions = {
     threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: "0px 0px -80px 0px",
   };
 
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -92,4 +92,49 @@ window.addEventListener("scroll", () => {
             // Otherwise, add an event listener for the load event
             img.addEventListener('load', imageLoaded);
         }
+    });
+
+
+    // Form validation
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let isValid = true;
+
+      // Name validation
+      const name = document.getElementById("name");
+      const nameError = document.getElementById("nameError");
+      if (name.value.trim() === "") {
+        nameError.style.display = "block";
+        isValid = false;
+      } else {
+        nameError.style.display = "none";
+      }
+
+      // Email validation
+      const email = document.getElementById("email");
+      const emailError = document.getElementById("emailError");
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.value.match(emailPattern)) {
+        emailError.style.display = "block";
+        isValid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      // Message validation
+      const message = document.getElementById("message");
+      const messageError = document.getElementById("messageError");
+      if (message.value.trim() === "") {
+        messageError.style.display = "block";
+        isValid = false;
+      } else {
+        messageError.style.display = "none";
+      }
+
+      // If all good
+      if (isValid) {
+        alert("✅ Thank you! Your message has been sent.");
+        document.getElementById("contactForm").reset();
+      }
     });

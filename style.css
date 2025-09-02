@@ -6,7 +6,34 @@
 
 html {
     overflow-x: hidden;
+      scroll-behavior: smooth;
+}
 
+
+/*
+    scroll bar
+*/
+
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #f4f9f4;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3b80ad!important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:  #3b80ad!important;
+    border-radius: 10px;
 }
 
 /* Top Bar (always static) */
@@ -58,8 +85,8 @@ html {
     list-style: none;
 }
 
-.menu ul li  {
-     padding-top: 14px;
+.menu ul li {
+    padding-top: 14px;
     padding-bottom: 14px;
     position: relative;
 }
@@ -109,6 +136,7 @@ html {
     border: none;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .yellow-bg {
@@ -122,7 +150,7 @@ html {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: rgba(42, 75, 62, 0.2);
+    background: rgba(42, 75, 62, 0.5);
     z-index: 1;
 }
 
@@ -178,15 +206,20 @@ html {
     background-color: transparent;
     align-items: center;
     padding: 5px 10px;
-    z-index: 1;
+    z-index: 11;
     position: relative;
 }
 
-#home::after {
-    background-image: url(ripped-paper-slider-2.png);
+#home::after{
+    background-image: url(images/ripped-paper-slider-2.png);
 }
 
-#home::after {
+#contact {
+    background-color: #F6F5F2;
+}
+
+#home::after
+{
     content: "";
     width: 100%;
     height: 16px;
@@ -207,8 +240,9 @@ html {
     padding: 10px;
 }
 
-#about .heading2 {
-    font-size: 46px;
+#about .heading2,
+#contact .heading2 {
+    font-size: 36px;
     font-weight: bold;
     color: #255946;
     padding-bottom: 20px;
@@ -223,21 +257,108 @@ html {
     color: #949494;
 }
 
-#about p {
+#about p,
+.contact-right p {
     font-size: 16px;
-    line-height: 2.15em;
+    line-height: 1.5em;
     color: #6d7572;
+}
+
+#contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.contact-right {
+    align-self: flex-start;
+    padding: 30px;
+}
+
+#contact .container {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#contact label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+#contact .error {
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+}
+
+#contact button {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    max-width: 140px;
+    margin: 0 auto;
+}
+
+#contact button:hover {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    transform: scale(1.05);
+}
+
+#contact::before {
+    background-image: url(images/ripped-paper-slider-2.png);
+}
+#contact::before {
+    content: "";
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 footer {
     background-color: #1F4E3D;
-    padding: 5px 10px;
+    padding: 10px;
     position: relative;
-    margin-top: 30px;
 }
 
 footer::before {
-    background-image: url(ripped-paper-base.png);
+    background-image: url(images/ripped-paper-base.png);
     background-size: cover;
 }
 

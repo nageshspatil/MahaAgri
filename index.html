@@ -19,7 +19,7 @@
         <img src="images/shetkari.png" alt="shetkari" class="w-60">
     </div>
 
-    <div id="home">
+    <section id="home">
         <div class="heroOverlay"></div>
 
         <div class="hero-background-images">
@@ -42,12 +42,12 @@
                     <li><a href="#contact">Contact us</a></li>
                 </ul>
             </nav>
-            <div class="btn-group w-20">
+            <div class="btn-group">
                 <button class="yellow-bg">Login</button>
                 <button>Register</button>
             </div>
         </header>
-    </div>
+    </section>
 
     <section id="about" class="fade-in">
         <div class="width-50">
@@ -62,11 +62,39 @@
         </div>
 
     </section>
-    <!-- <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Let’s collaborate to shape the future of farming with AI-driven solutions.</p>
-        <a href="contact.html" class="btn">Read More</a>
-    </section> -->
+    <section id="contact" class="fade-in">
+        <div class="width-50">
+            <!-- Contact Form -->
+            <div class="container">
+                <form id="contactForm">
+                    <div>
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        <div class="error" id="nameError">Name is required</div>
+                    </div>
+
+                    <div>
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email">
+                        <div class="error" id="emailError">Valid email is required</div>
+                    </div>
+
+                    <div>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="2" placeholder="Your Message"></textarea>
+                        <div class="error" id="messageError">Message cannot be empty</div>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="contact-right width-50">
+            <h2 class="heading2">Contact Us</h2>
+            <p>Let’s collaborate to shape the future of farming with AI-driven solutions.</p>
+        </div>
+
+    </section>
     <footer>
         <p>© Developed By: NDKSP - Digital Innovation Lab.</p>
     </footer>
