@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+
+}
+
+/* Top Bar (always static) */
+.topbar {
+    background: #004d00;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: bold;
+}
+
+/* Menu Bar (normal position) */
+.menu {
+    background: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Sticky state */
+.menu.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #255946;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* TranslateY animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Menu Items */
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.menu ul li  {
+     padding-top: 14px;
+    padding-bottom: 14px;
+    position: relative;
+}
+
+.menu ul li::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #efb443;
+    position: absolute;
+    bottom: 13px;
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease;
+    transition: opacity 500ms ease;
+    z-index: 1;
+}
+
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu ul li:hover::before {
+    opacity: 1;
+}
+
+#topBar {
+    background: linear-gradient(to right, #bee490, #79dcd2);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+
+#topHeader .btn-group button {
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 10px;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.yellow-bg {
+    color: #fff;
+    background-color: #efb443;
+}
+
+
+
+.heroOverlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(42, 75, 62, 0.2);
+    z-index: 1;
+}
+
+.hero-background-images {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.hero-background-image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+
+.background-images {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.showing-img {
+    opacity: 1;
+    z-index: -1;
+    transition: none;
+}
+
+#home {
+    position: relative;
+    height: 100vh;
+}
+
+#home header {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding: 5px 10px;
+    z-index: 1;
+    position: relative;
+}
+
+#home::after {
+    background-image: url(ripped-paper-slider-2.png);
+}
+
+#home::after {
+    content: "";
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#about {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#about .heading2 {
+    font-size: 46px;
+    font-weight: bold;
+    color: #255946;
+    padding-bottom: 20px;
+}
+
+#about .heading {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1em;
+    letter-spacing: 2.6px;
+    color: #949494;
+}
+
+#about p {
+    font-size: 16px;
+    line-height: 2.15em;
+    color: #6d7572;
+}
+
+footer {
+    background-color: #1F4E3D;
+    padding: 5px 10px;
+    position: relative;
+    margin-top: 30px;
+}
+
+footer::before {
+    background-image: url(ripped-paper-base.png);
+    background-size: cover;
+}
+
+footer::before {
+    content: "";
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1em;
+    /* color: #B5C3BE; */
+    color: #fff;
+    text-align: center;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60px;
+}
+
+.w-50 {
+    width: 50px;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.font-size-28 {
+    font-size: 28px;
+}
+
+.text-white {
+    color: white;
+}
+
+.light-green {
+    color: #3b6850;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
