@@ -70,6 +70,11 @@ a {
     animation: slideDown 0.3s ease forwards;
 }
 
+#innerPage .menu{
+    width: 100%;
+    background: #255946;
+}
+
 /* TranslateY animation */
 @keyframes slideDown {
     from {
@@ -426,6 +431,15 @@ footer p {
     /* color: #B5C3BE; */
     color: #fff;
     text-align: center;
+}
+
+
+#innerPageHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f6;
+    padding: 80px;
 }
 
 .width-50 {
