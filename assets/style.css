@@ -6,7 +6,7 @@
 
 html {
     overflow-x: hidden;
-      scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 
@@ -27,13 +27,18 @@ html {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #3b80ad!important;
+    background: #3b80ad !important;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background:  #3b80ad!important;
+    background: #3b80ad !important;
     border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 /* Top Bar (always static) */
@@ -51,6 +56,7 @@ html {
     position: relative;
     transition: all 0.3s ease;
     z-index: 1000;
+    text-align: center;
 }
 
 /* Sticky state */
@@ -202,7 +208,7 @@ html {
 
 #home header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: transparent;
     align-items: center;
     padding: 5px 10px;
@@ -210,7 +216,7 @@ html {
     position: relative;
 }
 
-#home::after{
+#home::after {
     background-image: url(images/ripped-paper-slider-2.png);
 }
 
@@ -218,8 +224,7 @@ html {
     background-color: #F6F5F2;
 }
 
-#home::after
-{
+#home::after {
     content: "";
     width: 100%;
     height: 16px;
@@ -248,7 +253,8 @@ html {
     padding-bottom: 20px;
 }
 
-#about .heading {
+#about .heading,
+#programsInitiatives .heading {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -258,10 +264,45 @@ html {
 }
 
 #about p,
-.contact-right p {
+.contact-right p,
+#programsInitiatives p {
     font-size: 16px;
     line-height: 1.5em;
     color: #6d7572;
+}
+
+#programsInitiatives {
+    background: linear-gradient(148deg, #56a96a, #79e2e2);
+}
+
+#programsInitiatives .heading {
+    color: #efb443;
+    font-weight: bold;
+}
+
+
+#programsInitiatives p {
+    color: white;
+}
+
+#startupsPartners {
+    background-color: #F6F5F2;
+}
+
+#startupsPartners::after {
+    background-image: url(images/ripped-paper-gray-up.png);
+}
+
+#startupsPartners::after {
+    content: "";
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #contact {
@@ -318,7 +359,7 @@ html {
     display: none;
 }
 
-#contact button {
+button {
     background: linear-gradient(90deg, #2ecc71, #27ae60);
     color: #fff;
     border: none;
@@ -331,15 +372,18 @@ html {
     margin: 0 auto;
 }
 
-#contact button:hover {
+button:hover {
     background: linear-gradient(90deg, #27ae60, #2ecc71);
     transform: scale(1.05);
 }
 
-#contact::before {
-    background-image: url(images/ripped-paper-slider-2.png);
+#contact::before,
+#startupsPartners::before {
+    background-image: url(images/ripped-paper-gray-up.png);
 }
-#contact::before {
+
+#contact::before,
+#startupsPartners::before {
     content: "";
     width: 100%;
     height: 16px;
@@ -349,6 +393,7 @@ html {
     z-index: 10;
     background-size: cover;
     background-repeat: no-repeat;
+    transform: rotate(180deg);
 }
 
 footer {
@@ -417,6 +462,14 @@ footer p {
 
 .ml-10 {
     margin-left: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.p-10 {
+    padding: 10px;
 }
 
 /* Fade-in Animation */
